@@ -41,6 +41,7 @@ public class WyborPiwa extends HttpServlet {
 		}*/
 		
 		request.setAttribute("marki", marki);
+		request.setAttribute("test", "wpisTestowy");
 		RequestDispatcher view = request.getRequestDispatcher("wyniki.jsp");
 		view.forward(request, response); 
 

@@ -13,5 +13,16 @@
 	<c:forEach var="marka" items="${marki}">
 		- ${marka}<br/>
 	</c:forEach>
+	
+	Test ------------------------- <br>
+	<c:forEach var="t" items="${test}">
+		${t}<br>
+	</c:forEach>
+	
+	Test 21------------------------- <br>
+	<c:forEach var="t1" items="${tryttty}">
+		${t1}<br>
+	</c:forEach>
+	
 </body>
 </html> 

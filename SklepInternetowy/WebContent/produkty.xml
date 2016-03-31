@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<computer_parts>
+	<part ID="1">
+	  <name>Monitor 12'</name>
+	  <price>200.00</price>
+	</part>
+	<part ID="2">
+	  <name>Monitor 13'</name>
+	  <price>250.00</price>
+	</part>
+	<part ID="3">
+	  <name>Monitor 14'</name>
+	  <price>300.00</price>
+	</part>
+	<part ID="4">
+		<name>Monitor 15'</name>
+		<price>350.00</price>
+	</part>
+	<part ID="5">
+		<name>Monitor 16'</name>
+		<price>400.00</price>
+	</part>
+	<part ID="6">
+		<name>Monitor 17'</name>
+		<price>450.00</price>
+	</part>
+	<part ID="7">
+		<name>Monitor 18'</name>
+		<price>5000.00</price>
+	</part>
+</computer_parts>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<comments>
+<com>
+  <name>Jan Kowalski</name>
+  <email>jan@kowalski.pl</email>
+  <comment>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</comment>
+</com>
+<com>
+  <name>Jan Nowak</name>
+  <email>jan@nowak.pl</email>
+  <comment>Ut enim ad minim veniam, quis nostrud exercitation ullamco</comment>
+</com>
+<com>
+  <name>Janina Kowalska</name>
+  <email>janina@kowalski.pl</email>
+  <comment>laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit</comment>
+</com>
+<com>
+  <name>Janina Nowak</name>
+  <email>janina@nowak.pl</email>
+  <comment>cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</comment>
+</com>
+</comments>
