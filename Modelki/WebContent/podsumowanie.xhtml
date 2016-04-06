@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:c="http://java.sun.com/jsf/core"
+	  xmlns:ui = "http://java.sun.com/jsf/facelets"
+	  xmlns:h = "http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Podsumowanie</title>
+</head>
+<h:body>
+	<h1>Twoje dane osobowe:</h1> 
+	<h:outputText value="Imie: #{dane.imie}" /><br/>
+	<h:outputText value="Nazwisko: #{dane.nazwisko}" /><br/>
+	<h:outputText value="Adres: #{dane.adres}" /><br/>
+	<h:outputText value="Telefon: #{dane.telefon}" /><br/>
+	<h:outputText value="E-mail: #{dane.mail}" /><br/>
+	<h:outputText value="Wiek: #{dane.wiek}" /><br/>
+	<h:outputText value="Waga: #{dane.waga}" /><br/>
+	<h:outputText value="Kolor oczu: #{dane.oczy}" /><br/>
+	<h:outputText value="Kolor włosów: #{dane.wlosy}" /><br/>
+	<h:outputText value="Rozmiar ubrania: #{dane.ubranie}" /><br/>
+	<h:outputText value="Numer buta: #{dane.buty}" /><br/>
+	<h:outputText value="Imie: #{dane.doswiadczenie}" /><br/>
+	<h:outputText value="Płeć: #{dane.plec}" /><br/>
+	
+	<h:outputText value="Wielkość miseczki: #{dane.miseczka}" /><br/>
+	<h:outputText value="Obwód biustu: #{dane.biust}" /><br/>
+	<h:outputText value="Talia: #{dane.talia}" /><br/>
+	<h:outputText value="Biodra: #{dane.biodra}" /><br/>
+	<h:outputText value="Klatka: #{dane.klatka}" /><br/>
+	<h:outputText value="Pas: #{dane.pas}" /><br/>
+	<h:outputText value="Długość nogi: #{dane.noga}" /><br/>
+	
+	
+	<h:link value="Jeszcze raz" outcome="index" />
+</h:body>
+</html>
+

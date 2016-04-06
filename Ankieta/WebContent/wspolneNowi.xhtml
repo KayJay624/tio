@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  
+	  xmlns:h = "http://java.sun.com/jsf/html">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Ankieta - nowy klient</title>
+</h:head>
+<h:body>
+	<h1>Ankieta nowy klient</h1>
+	<h:form >
+	  <h:panelGrid columns="3" cellpadding="5" cellspacing="1">	
+		
+		Ile jesteś w stanie przeznaczyc miesięcznie na zakup ubrania?
+		<h:selectOneMenu id="p1" value="#{dane.p1}">
+			<f:selectItem itemValue="#{null}" itemLabel="--select--" noSelectionOption="true"/>
+		  	<f:selectItem itemValue="do 100 zl" itemLabel="do 100 zł" />
+		  	<f:selectItem itemValue="100-500 zl" itemLabel="100-500 zł" />
+		  	<f:selectItem itemValue="500-1000 zl" itemLabel="500-1000 zł" />
+		  	<f:selectItem itemValue="powyzej 1000 zl" itemLabel="powyżej 1000 zł" />			  			  
+		</h:selectOneMenu> 
+		<h:message for="p1" style="color:red"/>
+		
+		Gdzie najczęściej dokonujesz zakupów ubrania? 
+		<h:selectManyListbox id="p2" value="#{dane.p2}">
+			<f:selectItem itemValue="#{null}" itemLabel="--select--" noSelectionOption="true"/>
+		  	<f:selectItem itemValue="Sklep firmowy" itemLabel="Sklep firmowy" />
+		  	<f:selectItem itemValue="Hipermarket" itemLabel="Hipermarket" />
+		  	<f:selectItem itemValue="Bazar" itemLabel="Bazar" />
+		  	<f:selectItem itemValue="Sklep z odzieza uzywana" itemLabel="Sklep z odzieżą używaną" />			  			  
+		</h:selectManyListbox> 
+		<h:message for="p2" style="color:red"/>
+		
+		Jak często dokonujesz zakupu ubrania?
+		<h:selectOneMenu id="p3" value="#{dane.p3}">
+			<f:selectItem itemValue="#{null}" itemLabel="--select--" noSelectionOption="true"/>
+		  	<f:selectItem itemValue="Codziennie" itemLabel="Codziennie" />
+		  	<f:selectItem itemValue="Raz w tygodniu" itemLabel="Raz w tygodniu" />
+		  	<f:selectItem itemValue="Raz w miesiacu" itemLabel="Raz w miesiącu" />
+		  	<f:selectItem itemValue="Kilka razy w roku" itemLabel="Kilka razy w roku" />			  			  
+		</h:selectOneMenu> 
+		<h:message for="p3" style="color:red"/>
+		
+		W jakich kolorach preferujesz ubrania?
+		<h:selectManyListbox id="p4" value="#{dane.p4}">
+			<f:selectItem itemValue="#{null}" itemLabel="--select--" noSelectionOption="true"/>
+		  	<f:selectItem itemValue="Kolorowo-jaskrawych" itemLabel="Kolorowo-jaskrawych" />
+		  	<f:selectItem itemValue="Stonowanych w szarosciach" itemLabel="Stonowanych w szarościach" />
+		  	<f:selectItem itemValue="W czerni i bieli" itemLabel="W czerni i bieli" />
+		  	<f:selectItem itemValue="W samej czerni" itemLabel="W samej czerni" />			  			  
+		</h:selectManyListbox> 
+		<h:message for="p4" style="color:red"/>
+		
+		<h:outputText value="Jakiego rodzaju ubrania najchętniej kupujesz?"/>		
+		<h:selectManyListbox id="p5" value="#{dane.p5}" rendered="#{dane.plec == 'kobieta'}">
+			<f:selectItem itemValue="#{null}" itemLabel="--select--" noSelectionOption="true"/>
+		  	<f:selectItem itemValue="garsonki" itemLabel="garsonki" />
+		  	<f:selectItem itemValue="bluzki" itemLabel="bluzki" />
+		  	<f:selectItem itemValue="spodniczki" itemLabel="spódniczki" />
+		  	<f:selectItem itemValue="spodnie" itemLabel="spodnie" />			  			  
+		</h:selectManyListbox> 
+		<h:message for="p5" style="color:red" rendered="#{dane.plec == 'kobieta'}"/>
+		
+		<h:selectManyListbox id="p6" value="#{dane.p5}" rendered="#{dane.plec == 'mezczyzna'}">
+			<f:selectItem itemValue="#{null}" itemLabel="--select--" noSelectionOption="true"/>
+		  	<f:selectItem itemValue="spodnie" itemLabel="spodnie" />
+		  	<f:selectItem itemValue="spodenki" itemLabel="spodenki" />
+		  	<f:selectItem itemValue="garnitury" itemLabel="garnitury" />
+		  	<f:selectItem itemValue="koszule" itemLabel="koszule" />
+		  	<f:selectItem itemValue="krawaty" itemLabel="krawaty" />			  			  
+		</h:selectManyListbox > 
+		<h:message for="p6" style="color:red" rendered="#{dane.plec == 'mezczyzna'}"/>
+		
+		</h:panelGrid>	
+		
+		<h:commandButton value="dalej" action="#{dane.badanie}"/>
+		
+	</h:form> 
+	<br/>
+	<br/>
+	<br/>
+	<h:form>
+	<h:commandButton value="Reklama" action="#{dane.inc()}" immediate="true" style="width:500px;height:100px" rendered="#{dane.wyswietlReklame()}"/>
+	<h:outputText value="Klikacz: #{dane.counter}"/>
+	</h:form>
+</h:body>
+</html>

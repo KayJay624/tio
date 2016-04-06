@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:c="http://java.sun.com/jsf/core"
+	  xmlns:ui = "http://java.sun.com/jsf/facelets"
+	  xmlns:h = "http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Dane osobowe</title>
+</head>
+<h:body>
+	<h1>Twoje dane osobowe:</h1> 
+	<h:outputText value="Imie: #{dane.imie}" /><br/>
+	<h:outputText value="Nazwisko: #{dane.nazwisko}" /><br/>
+	<h:outputText value="Wiek: #{dane.wiek}" /><br/>
+	<h:outputText value="Płeć: #{dane.plec}" /><br/>
+	<h:outputText value="Województwo: #{dane.wojewodztwo}" /><br/>
+	
+	<h:link value="Jeszcze raz" outcome="index" />
+</h:body>
+</html>
+

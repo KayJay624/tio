@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  
+	  xmlns:h = "http://java.sun.com/jsf/html">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Agencja modelek i modeli</title>
+</h:head>
+<h:body>
+	<h1>Agencja modelek i modeli</h1>
+	<h:form >
+	Podaj swoje dane: <br/>
+	  <h:panelGrid columns="3" cellpadding="5" cellspacing="1">	
+		
+		Imię: 		<h:inputText id="imie" value="#{dane.imie}" required="true"/> 
+					<h:message for="imie" style="color:red"/>
+		
+		Nazwisko: 	<h:inputText id="nazwisko" value="#{dane.nazwisko}"/>
+					<h:message for="nazwisko" style="color:red"/>
+					
+		Adres: 		<h:inputText id="adres" value="#{dane.adres}"/>
+					<h:message for="adres" style="color:red"/>
+		
+		Telefon: 	<h:inputText id="telefon" value="#{dane.telefon}">
+						 <f:validateRegex pattern="^[0-9]{0,}$" />
+					</h:inputText>
+					<h:message for="telefon" style="color:red"/>
+		
+		E-mail: 	<h:inputText id="mail" value="#{dane.mail}" required="true">
+						 <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+					</h:inputText>	
+					<h:message for="mail" style="color:red"/>
+		
+		Wiek: 		<h:inputText id="wiek" value="#{dane.wiek}"> 
+					</h:inputText>
+					<h:message for="wiek" style="color:red" />
+		
+		Wzrost: 	<h:inputText id="wzrost" value="#{dane.wzrost}">
+						 <f:validateLongRange minimum="50" maximum="250" /> 
+					</h:inputText>
+					<h:message for="wzrost" style="color:red"/>
+		
+		Waga: 		<h:inputText id="waga" value="#{dane.waga}">
+					 	<f:validateLongRange minimum="0" maximum="150" /> 
+					</h:inputText>
+					<h:message for="waga" style="color:red"/>
+		
+		Kolor Włosów : <h:inputText id="wlosy" value="#{dane.wlosy}"/>
+					<h:message for="wlosy" style="color:red"/>
+		
+		Kolor oczu: <h:inputText id="oczy" value="#{dane.oczy}"/>
+					<h:message for="oczy" style="color:red"/>
+		
+		Numer buta: <h:inputText id="buty" value="#{dane.buty}"/>
+					<h:message for="buty" style="color:red"/>
+		
+		Doświadczenie: <h:selectOneMenu id="doswiadczenie" value="#{dane.doswiadczenie}">
+		  			  <f:selectItem itemValue="#{null}" itemLabel="--select--" noSelectionOption="true"/>
+		  			  <f:selectItem itemValue="1" itemLabel="1" />
+		  			  <f:selectItem itemValue="2" itemLabel="2" />
+		  			  <f:selectItem itemValue="3" itemLabel="3" />	
+		  			  <f:selectItem itemValue="4" itemLabel="4" />	
+		  			  <f:selectItem itemValue="5" itemLabel="5" />		  			  
+					</h:selectOneMenu> 
+					<h:message for="doswiadczenie" style="color:red"/>
+		
+		Płeć: 		<h:selectOneRadio id="plec" value="#{dane.plec}" required="true">
+		   			  <f:selectItem itemValue="kobieta" itemLabel="kobieta" />
+   					  <f:selectItem itemValue="mezczyzna" itemLabel="mężczyzna" />		
+					</h:selectOneRadio>
+					<h:message for="plec" style="color:red"/>
+				
+		</h:panelGrid>	
+		
+		<h:commandButton value="Dalej" action="#{dane.dalej}"/>
+		
+	</h:form> 
+	<br/>
+
+</h:body>
+</html>

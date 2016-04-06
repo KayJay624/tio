@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  
+	  xmlns:h = "http://java.sun.com/jsf/html">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Ankieta</title>
+</h:head>
+<h:body>
+	<h1>Ankieta Sklep Internetowy</h1>
+	<h:form >
+	  <h:panelGrid columns="3" cellpadding="5" cellspacing="1">	
+		
+		Imię: 		<h:inputText id="imie" value="#{dane.imie}" required="true"/> 
+					<h:message for="imie" style="color:red"/>
+			
+		E-mail: 	<h:inputText id="mail" value="#{dane.mail}" required="true">
+						 <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+					</h:inputText>	
+					<h:message for="mail" style="color:red"/>
+		
+		Kod pocztowy: 	<h:inputText id="kod" value="#{dane.kod}" required="true">
+						 <f:validateRegex pattern="^[0-9]{2}-[0-9]{3}$" />
+					</h:inputText>	
+					<h:message for="kod" style="color:red"/>
+		
+		Wiek: 		<h:inputText id="wiek" value="#{dane.wiek}">
+						<f:validateLongRange minimum="10" maximum="100" /> 
+					</h:inputText>
+					<h:message for="wiek" style="color:red" />
+		
+		Płeć: 		<h:selectOneRadio id ="plec" value="#{dane.plec}" required="true">
+		   			  <f:selectItem itemValue="kobieta" itemLabel="kobieta" />
+   					  <f:selectItem itemValue="mezczyzna" itemLabel="mężczyzna" />		
+					</h:selectOneRadio>
+					<h:message for="plec" style="color:red"/>
+		
+		Wykształcenie: 		<h:inputText id="wyksztalcenie" value="#{dane.wyksztalcenie}"/> 
+					<h:message for="wyksztalcenie" style="color:red"/>
+		
+		Rozmiar: 	<h:inputText id="rozmiar" value="#{dane.rozmiar}">
+						 <f:validateLongRange minimum="20" maximum="50" /> 
+					</h:inputText>
+					<h:message for="rozmiar" style="color:red"/>
+		
+		Nowy klient <h:selectBooleanCheckbox id="nowy" binding="#{dane.nowy}"/>
+					<h:message for="nowy" style="color:red"/> 
+		
+		</h:panelGrid>	
+		
+		<h:commandButton value="Dalej" action="#{dane.dalej}"/>		
+	</h:form> 
+	
+	<br/>
+	<br/>
+	<h:form>
+	<h:commandButton value="Reklama" action="#{dane.inc()}" immediate="true" style="width:500px;height:100px" rendered="#{dane.wyswietlReklame()}"/>
+	<h:outputText value="Klikacz: #{dane.counter}"/>
+	</h:form>
+	
+</h:body>
+</html>

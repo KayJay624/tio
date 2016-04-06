@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:c="http://java.sun.com/jsf/core"
+	  xmlns:ui = "http://java.sun.com/jsf/facelets"
+	  xmlns:h = "http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Podsumowanie</title>
+</head>
+<h:body>
+	<h1>Podane dane:</h1> 
+	
+	<h:panelGrid columns="1" cellpadding="5" cellspacing="1">	
+		<h:outputText value="Imie: #{dane.imie}" rendered="#{not empty dane.imie}"/>
+		<h:outputText value="E-mail: #{dane.mail}" rendered="#{not empty dane.mail}"/>
+		<h:outputText value="Wiek: #{dane.wiek}" rendered="#{not empty dane.wiek}"/> 
+		<h:outputText value="Kod pocztowy: #{dane.kod}" rendered="#{not empty dane.kod}"/> 
+		<h:outputText value="Wyksztalcenie: #{dane.wyksztalcenie}" rendered="#{not empty dane.wyksztalcenie}"/> 
+		<h:outputText value="Rozmiar: #{dane.rozmiar}" rendered="#{not empty dane.rozmiar}"/> 
+		<h:outputText value="Płeć: #{dane.plec}" rendered="#{not empty dane.plec}"/> 
+		
+		<h:outputText value="Ile jesteś w stanie przeznaczyc miesięcznie na zakup ubrania?: #{dane.p1}" rendered="#{not empty dane.p1}"/> 
+		<h:outputText value="Gdzie najczęściej dokonujesz zakupów ubrania?: #{dane.getP2asString()}" rendered="#{not empty dane.p2}"/> 
+		<h:outputText value="Jak często dokonujesz zakupu ubrania?: #{dane.p3}" rendered="#{not empty dane.p3}"/> 
+		<h:outputText value="W jakich kolorach preferujesz ubrania?: #{dane.getP4asString()}" rendered="#{not empty dane.p4}"/> 
+		<h:outputText value="Jakiego rodzaju ubrania najchętniej kupujesz?: #{dane.getP5asString()}" rendered="#{not empty dane.p5}"/> 
+		
+		<h:outputText value="Kiedy ostatnio robiłaś/robiłeś u nas zakupy?: #{dane.b1}" rendered="#{not empty dane.b1}"/> 
+		<h:outputText value="Czy jesteś zadowolona/zadowolony z zakupu?: #{dane.b2}" rendered="#{not empty dane.b2}"/> 
+		<h:outputText value="Czy jesteś zadowolona/zadowolony z naszych pracowników? : #{dane.b3}" rendered="#{not empty dane.b3}"/> 
+		<h:outputText value="Uwagi : #{dane.b4}" rendered="#{not empty dane.b4}"/> 
+	</h:panelGrid>
+	
+	<h:link value="Jeszcze raz" outcome="index" />
+	
+	
+	<br/>
+	<br/>
+	<h:form>
+	<h:commandButton value="Reklama" action="#{dane.inc()}" immediate="true" style="width:500px;height:100px" rendered="#{dane.wyswietlReklame()}"/>
+	<h:outputText value="Klikacz: #{dane.counter}"/>
+	</h:form>
+	
+</h:body>
+</html>
+

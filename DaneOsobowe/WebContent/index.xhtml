@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  
+	  xmlns:h = "http://java.sun.com/jsf/html">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Dane osobowe</title>
+</h:head>
+<h:body>
+	<h1>Gromadzenie danych osobowych</h1>
+	<h:form >
+	Podaj swoje dane: <br/>
+	  <h:panelGrid columns="3" cellpadding="5" cellspacing="1">	
+		
+		Imię: 		<h:inputText value="#{dane.imie}"/> 
+					<h:message for="imie" style="color:red"/>
+		
+		Nazwisko: 	<h:inputText id="nazwisko" value="#{dane.nazwisko}" required="true"/>
+					<h:message for="nazwisko" style="color:red"/>
+		
+		Wiek: 		<h:inputText id="wiek" value="#{dane.wiek}">
+					  <f:validateLongRange minimum="0" maximum="120" /> 
+					</h:inputText>
+					<h:message for="wiek" style="color:red" />
+		
+		Płeć: 		<h:selectOneRadio value="#{dane.plec}">
+		   			  <f:selectItem itemValue="kobieta" itemLabel="kobieta" />
+   					  <f:selectItem itemValue="mezczyzna" itemLabel="mężczyzna" />		
+					</h:selectOneRadio>
+					<h:message for="plec" style="color:red"/>
+		
+		Województwo: <h:selectOneMenu id="pickWojewodztwo" value="#{dane.wojewodztwo}" required="true" binding="#{dane.wojewodztwoCheck}" 
+						valueChangeListener="#{dane.activateButton}" onchange="submit()" immediate="true">
+		  			  <f:selectItem itemValue="#{null}" itemLabel="--select--" noSelectionOption="true"/>
+		  			  <f:selectItem itemValue="malopolskie" itemLabel="malopolskie" />
+		  			  <f:selectItem itemValue="wielkopolskie" itemLabel="wielkopolskie" />
+		  			  <f:selectItem itemValue="mazowieckie" itemLabel="mazowieckie" />		  			  
+					</h:selectOneMenu> 
+					<h:message for="pickWojewodztwo" style="color:red"/>
+		
+		</h:panelGrid>	
+		
+		<h:commandButton value="Wyślij" binding="#{dane.wyslijButton}" action="#{dane.wyslij}" disabled="true"/>
+		
+	</h:form> 
+	<br/>
+
+</h:body>
+</html>

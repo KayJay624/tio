@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  
+	  xmlns:h = "http://java.sun.com/jsf/html">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Badanie satysfakcji klienta </title>
+</h:head>
+<h:body>
+	<h1>Badanie satysfakcji klienta </h1>
+	<h:form >
+	  <h:panelGrid columns="3" cellpadding="5" cellspacing="1">	
+		
+		Kiedy ostatnio robiłeś u nas zakupy? 
+		<h:selectOneMenu id="b1" value="#{dane.b1}">
+			<f:selectItem itemValue="#{null}" itemLabel="--select--" noSelectionOption="true"/>
+		  	<f:selectItem itemValue="Wczoraj" itemLabel="Wczoraj" />
+		  	<f:selectItem itemValue="W zeszlym tygodniu" itemLabel="W zeszłym tygodniu" />
+		  	<f:selectItem itemValue="W zeszlym miesiacu" itemLabel="W zeszłym miesiącu" />
+		  	<f:selectItem itemValue="Kilka miesiecy temu" itemLabel="Kilka miesięcy temu" />
+		  	<f:selectItem itemValue="Nie pamiętam" itemLabel="Nie pamiętam" />			  			  
+		</h:selectOneMenu> 
+		<h:message for="b1" style="color:red"/>
+		
+		Czy jesteś zadowolony z zakupu? 
+		<h:selectOneMenu id="b2" value="#{dane.b2}">
+			<f:selectItem itemValue="#{null}" itemLabel="--select--" noSelectionOption="true"/>
+		  	<f:selectItem itemValue="Tak" itemLabel="Tak" />
+		  	<f:selectItem itemValue="Raczej tak" itemLabel="Raczej tak" />
+		  	<f:selectItem itemValue="Raczej nie" itemLabel="Raczej nie" />
+		  	<f:selectItem itemValue="Nie" itemLabel="Nie" />
+		  	<f:selectItem itemValue="Nie wiem" itemLabel="Nie wiem" />				  			  
+		</h:selectOneMenu> 
+		<h:message for="b2" style="color:red"/>
+		
+		Czy jesteś zadowolony z naszych pracowników?
+		<h:selectOneMenu id="b3" value="#{dane.b3}">
+			<f:selectItem itemValue="Tak" itemLabel="Tak" />
+		  	<f:selectItem itemValue="Raczej tak" itemLabel="Raczej tak" />
+		  	<f:selectItem itemValue="Raczej nie" itemLabel="Raczej nie" />
+		  	<f:selectItem itemValue="Nie" itemLabel="Nie" />
+		  	<f:selectItem itemValue="Nie wiem" itemLabel="Nie wiem" />		  
+		</h:selectOneMenu> 
+		<h:message for="b3" style="color:red"/>
+		
+		Wpisz swoje uwagi:
+		<h:inputTextarea cols="30" rows="10" id="b4" value="#{dane.b4}"/>
+		<h:message for="b4" style="color:red"/>
+		
+		</h:panelGrid>	
+		
+		<h:commandButton value="Podsumowanie" action="#{dane.podsumowanie}"/>
+		
+	</h:form> 
+	<br/>
+	<br/>
+	<br/>
+	<h:form>
+	<h:commandButton value="Reklama" action="#{dane.inc()}" immediate="true" style="width:500px;height:100px" rendered="#{dane.wyswietlReklame()}"/>
+	<h:outputText value="Klikacz: #{dane.counter}"/>
+	</h:form>
+	
+</h:body>
+</html>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  
+	  xmlns:h = "http://java.sun.com/jsf/html">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Agencja modelek i modeli</title>
+</h:head>
+<h:body>
+	<h1>Agencja modelek i modeli</h1>
+	<h:form >
+	Podaj swoje dane: <br/>
+	  <h:panelGrid columns="3" cellpadding="5" cellspacing="1">	
+		
+		Obwód biustu: 		<h:inputText value="#{dane.biust}"/> 
+							<h:message for="biust" style="color:red"/>
+		
+		Wielkość miseczki: 	<h:inputText id="miseczka" value="#{dane.miseczka}"/>
+							<h:message for="miseczka" style="color:red"/>
+		
+		Talia:			 	<h:inputText id="talia" value="#{dane.talia}"/>
+							<h:message for="talia" style="color:red"/>
+		
+		Biodra:			 	<h:inputText id="biodra" value="#{dane.biodra}"/>
+							<h:message for="biadra" style="color:red"/>
+		
+		Długość nogi:	 	<h:inputText id="noga" value="#{dane.noga}"/>
+							<h:message for="noga" style="color:red"/>
+		
+		</h:panelGrid>	
+		
+		<h:commandButton value="Wyślij" action="#{dane.wyslij}"/>
+		
+	</h:form> 
+	<br/>
+
+</h:body>
+</html>
